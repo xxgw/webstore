@@ -5,9 +5,6 @@
 	<artifactId>webstore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-	</properties>
 
 	<build>
 		<plugins>
@@ -39,4 +36,8 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 </project>
