@@ -17,6 +17,15 @@ import com.packt.webstore.domain.repository.ProductRepository;
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
+	@Override
+	public void updateStock(String productId, long noOfUnits) {
+		String SQL = "UPDATE PRODUCTS SET UNITS_IN_STOCK = :unitsInStock WHERE ID = :id";
+		Map<String, Object> params = new HashMap<>();
+		params.put("unitsInStock", noOfUnits);
+		params.put("id", productId);
+		jdbcTemplate.update(SQL, params);
+	}
+
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
 
